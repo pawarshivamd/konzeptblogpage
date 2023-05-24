@@ -4,7 +4,7 @@ import WorkA from '../API/WorkA';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope ,faArrowRight ,faPhone } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
-import BlogPost from './BlogPost';
+
 const Blog = () => {
   const [workdata] = useState(WorkA);
 
@@ -39,10 +39,10 @@ const Blog = () => {
                 </div>
                 <p class="post__desc">{info}
                 </p>
-                {/* <Link to={<BlogPost/>} class="btn btn__secondary btn__link">
+                <Link to="/BlogPost" class="btn btn__secondary btn__link">
                   <span>Read More</span>
                   <FontAwesomeIcon icon={faArrowRight} />
-                </Link> */}
+                </Link>
               </div>
             </div>
           </div>

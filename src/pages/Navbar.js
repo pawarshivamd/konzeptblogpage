@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logoimgwhite from '../img/logo/tranferent_konzept_white.svg'
 import logoimg from '../img/logo/tranferent_konzept.svg'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 const [show,setShow]=useState(false)
@@ -144,7 +145,7 @@ const [show,setShow]=useState(false)
                             </li>
 
                             <li className="nav__item">
-                                <a href="blog" className="dropdown-toggle nav__item-link active">Blog</a>
+                                <Link to="/"  className="dropdown-toggle nav__item-link active">Blog</Link>
                             </li>
                             <li className="nav__item">
                                 <a href="contact-us.html" className="dropdown-toggle nav__item-link">Contact</a>
