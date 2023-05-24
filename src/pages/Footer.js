@@ -92,8 +92,9 @@ const Footer = () => {
                                 <ul className="social-icons list-unstyled mb-0">
                                     <li><a href="https://www.facebook.com/konzeptsolutions/" target="_blank"><img
                                         className="facdn" src={facebook} alt="" /></a></li>
-                                    <li><a href="https://www.linkedin.com/company/konzeptsolutions" target="_blank"><img
-                                        className="facdn" src={linkdin} alt="" /></a></li>
+                                    <li><a href="https://www.linkedin.com/company/konzeptsolutions" target="_blank">
+                                    {/* <img className="facdn" src={linkdin} alt="" /> */}
+                                    </a></li>
                                     <li><a href="https://www.instagram.com/konzeptsolutions/" target="_blank"><img
                                         className="facdn" src={instagram} alt="" /></a></li>
                                     <li><a href="https://twitter.com/konzeptsolution" target="_blank"><img className="facdn"

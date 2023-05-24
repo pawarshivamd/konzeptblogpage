@@ -1,29 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import logoimgwhite from '../img/logo/tranferent_konzept_white.svg'
 import logoimg from '../img/logo/tranferent_konzept.svg'
 
 const Navbar = () => {
-    useEffect(() => {
-        // JavaScript code goes here
-        function isNumberKey(e) {
-          var o = e.which ? e.which : e.keyCode;
-          return !(43 != o && o > 31 && (o < 48 || o > 57));
-        }
-    
-        function AllowOnlyNumbers(e) {
-          var o = e.clipboardData ? e.clipboardData : window.clipboardData,
-            n = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode,
-            t = e.type && "paste" == e.type ? o.getData("Text") : String.fromCharCode(n);
-          return /^\d+$/.test(t);
-        }
-    
-        // Rest of your JavaScript code...
-
-        // Cleanup function
-        return () => {
-          // Clean up any resources or event listeners if needed
-        };
-      }, []); // The empty array [] as the second argument ensures the effect runs only once on mount
+const [show,setShow]=useState(false)
     
   return (
     <>
@@ -36,11 +16,11 @@ const Navbar = () => {
                         <img loading="lazy" src={logoimg} height="75" width="auto"
                             className="logo-dark" alt="logo" />
                     </a>
-                    <button className="navbar-toggler" type="button">
+                    <button className="navbar-toggler" onClick={()=> setShow(!show)} type="button">
                         <span className="menu-lines"><span></span></span>
                     </button>
 
-                    <div className="collapse navbar-collapse" id="mainNavigation">
+                    <div className={`collapse navbar-collapse ${show ? "show":""}`} id="mainNavigation">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav__item has-dropdown">
                                 <a href='/' className="dropdown-toggle nav__item-link ">Home</a>
