@@ -39,7 +39,7 @@ const [show,setShow]=useState(false)
                                                 <ul className="nav flex-column">
 
                                                     <li className="nav__item"><a className="nav__item-link"
-                                                            href="web-solution.html#informativeweb">Informative
+                                                            href="https://www.konzeptsolutions.com/web-solution#informativeweb">Informative
                                                             Web</a>
                                                     </li>
                                                     <li className="nav__item"><a className="nav__item-link"
