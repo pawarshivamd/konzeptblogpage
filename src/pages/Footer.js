@@ -1,5 +1,5 @@
 import React from 'react'
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faEnvelope ,faLinkedInIn } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import facebook from '../img/icon/facebook.svg'
 import linkdin from '../img/icon/linkedin.svg'
@@ -81,8 +81,8 @@ const Footer = () => {
                                         <a href="tel:+919925033209" className="phone-number">
                                         <FontAwesomeIcon icon={faPhone} /> <span>+91 99250 33209</span>
                                         </a>
-                                        <a href="mailto:contact@konzeptsolutions.com"className="phone-number">
-                                        <FontAwesomeIcon icon={faEnvelope} /><span>contact@konzeptsolutions.com</span></a>
+                                        {/* <a href="mailto:contact@konzeptsolutions.com"className="phone-number">
+                                        <FontAwesomeIcon icon={faEnvelope} /><span>contact@konzeptsolutions.com</span></a> */}
                                     </li>
                                     <li className="color-body mt-20">1122, Shivalik Shilp 2,
                                         Near Keshavbaug Party plot,
@@ -93,7 +93,8 @@ const Footer = () => {
                                     <li><a href="https://www.facebook.com/konzeptsolutions/" target="_blank"><img
                                         className="facdn" src={facebook} alt="" /></a></li>
                                     <li><a href="https://www.linkedin.com/company/konzeptsolutions" target="_blank">
-                                    {/* <img className="facdn" src={linkdin} alt="" /> */}
+                                    <img className="facdn" src={linkdin} alt="" />
+                                    {/* <FontAwesomeIcon icon={faLinkedInIn} /> */}
                                     </a></li>
                                     <li><a href="https://www.instagram.com/konzeptsolutions/" target="_blank"><img
                                         className="facdn" src={instagram} alt="" /></a></li>
@@ -107,7 +108,7 @@ const Footer = () => {
                 
                 <div className="row">
                     <div className="col-sm-12 col-md-12 col-lg-12 text-center pb-110">
-                        <span className="fz-14">Copyrights &copy; 2022 All Rights Reserved |</span>
+                        <span className="fz-14">Copyrights &copy; 2023 All Rights Reserved |</span>
                         <a href="index.html"><span style={{color: '#1AB2A9'}}> konzept solutions</span></a>
                         </div>
                     </div>
