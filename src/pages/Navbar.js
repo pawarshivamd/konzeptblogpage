@@ -1,15 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import logoimgwhite from '../img/logo/tranferent_konzept_white.svg'
 import logoimg from '../img/logo/tranferent_konzept.svg'
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 const [show,setShow]=useState(false)
+
+
+useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+
+      if (scrollTop > 50) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
     
   return (
     <>
-    <header className="header header-transparent header-full">
-            <nav className="navbar navbar-expand-lg sticky-navbar">
+    <header className={`header ${show ? 'header-sticky' : 'header-transparent'} header-full `}>
+            <nav className={`navbar navbar-expand-lg sticky-navbar ${show ? 'sticky' : ''}`}>
                 <div className="container">
                     <a className="navbar-brand" href="index.html">
                         <img loading="lazy" src={logoimgwhite} height="100"
@@ -39,7 +57,7 @@ const [show,setShow]=useState(false)
                                                 <ul className="nav flex-column">
 
                                                     <li className="nav__item"><a className="nav__item-link"
-                                                            href="https://www.konzeptsolutions.com/web-solution#informativeweb">Informative
+                                                            href="web-solution.html#informativeweb">Informative
                                                             Web</a>
                                                     </li>
                                                     <li className="nav__item"><a className="nav__item-link"
