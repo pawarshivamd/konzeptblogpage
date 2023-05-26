@@ -1,20 +1,21 @@
-import React, { useState , useEffect } from 'react';
-import logoimgwhite from '../img/logo/tranferent_konzept_white.svg'
-import logoimg from '../img/logo/tranferent_konzept.svg'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logoimgwhite from '../img/logo/tranferent_konzept_white.svg';
+import logoimg from '../img/logo/tranferent_konzept.svg';
 
 const Navbar = () => {
-const [show,setShow]=useState(false)
-
-
-useEffect(() => {
+  const [show, setShow] = useState(false);
+  const [logoSrc, setLogoSrc] = useState(logoimgwhite);
+  useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
 
-      if (scrollTop > 50) {
+      if (scrollTop > 20) {
         setShow(true);
+        setLogoSrc(logoimg);
       } else {
         setShow(false);
+        setLogoSrc(logoimgwhite);
       }
     };
 
@@ -23,23 +24,20 @@ useEffect(() => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-    
+
   return (
     <>
-    <header className={`header ${show ? 'header-sticky' : 'header-transparent'} header-full `}>
-            <nav className={`navbar navbar-expand-lg sticky-navbar ${show ? 'sticky' : ''}`}>
-                <div className="container">
-                    <a className="navbar-brand" href="index.html">
-                        <img loading="lazy" src={logoimgwhite} height="100"
-                            className="logo-light" alt="logo" />
-                        <img loading="lazy" src={logoimg} height="75" width="auto"
-                            className="logo-dark" alt="logo" />
-                    </a>
-                    <button className="navbar-toggler" onClick={()=> setShow(!show)} type="button">
-                        <span className="menu-lines"><span></span></span>
-                    </button>
+      <header className={`header ${show ? '' : 'header-transparent'}  header-full`}>
+        <nav className={`navbar navbar-expand-lg sticky-navbar ${show ? 'is-sticky' : ''}  `}>
+          <div className="container">
+            <a className="navbar-brand" href="/">
+              <img loading="lazy" src={logoSrc} height="100" className="logo-light" alt="logo" />
+            </a>
+            <button className="navbar-toggler"  type="button">
+              <span className="menu-lines"><span></span></span>
+            </button>
 
-                    <div className={`collapse navbar-collapse ${show ? "show":""}`} id="mainNavigation">
+            <div className="collapse navbar-collapse" id="mainNavigation">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav__item has-dropdown">
                                 <a href='/' className="dropdown-toggle nav__item-link ">Home</a>
