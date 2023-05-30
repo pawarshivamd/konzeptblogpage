@@ -21,25 +21,25 @@ const Blog = () => {
           {workdata.map((curElem , id) => {
             const {  img, title, date, info, main ,second } = curElem;
             return (
-              <div class="col-sm-12 col-md-6 col-lg-4 mt-20">
-            <div class="post-item">
-              <div class="post__img " >
+              <div className="col-sm-12 col-md-6 col-lg-4 mt-20">
+            <div className="post-item">
+              <div className="post__img " >
                 <a href="/">
                   <img   loading="lazy" src={img} alt="blog image" />
                 </a>
               </div>
-              <div class="post__body">
-                <div class="post__meta-cat">
+              <div className="post__body">
+                <div className="post__meta-cat">
                   <a href="/">{main}</a><a href="/">{second}</a>
                 </div>
-                <h4 class="post__title"><a href="/">{title}</a>
+                <h4 className="post__title"><a href="/">{title}</a>
                 </h4>
-                <div class="post__meta">
-                  <span class="post__meta-date">{date}</span>
+                <div className="post__meta">
+                  <span className="post__meta-date">{date}</span>
                 </div>
-                <p class="post__desc">{info}
+                <p className="post__desc">{info}
                 </p>
-                <Link to="/BlogPost" class="btn btn__secondary btn__link">
+                <Link to="/BlogPost" className="btn btn__secondary btn__link">
                   <span>Read More</span>
                   <FontAwesomeIcon icon={faArrowRight} />
                 </Link>

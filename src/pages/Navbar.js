@@ -2,15 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logoimgwhite from '../img/logo/tranferent_konzept_white.svg';
 import logoimg from '../img/logo/tranferent_konzept.svg';
-
+import time from '../img/icon/time.svg'
 const Navbar = () => {
-  const [show, setShow] = useState(false);
+    const [Accordion , setAccordion] =useState (false);
+    const [open ,setOpen] = useState(false);
+  const [showScroll, setShow] = useState(false);
   const [logoSrc, setLogoSrc] = useState(logoimgwhite);
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
+      const isMaxWidth991 = window.innerWidth <= 991;
 
-      if (scrollTop > 20) {
+      if (scrollTop > 20 || isMaxWidth991) {
         setShow(true);
         setLogoSrc(logoimg);
       } else {
@@ -24,34 +27,44 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+  const handleCloseMenu = () => {
+    setOpen(false);
+  };
+  const handleAccordionToggle = () => {
+    setAccordion(!Accordion);
+  };
   return (
     <>
-      <header className={`header ${show ? '' : 'header-transparent'}  header-full`}>
-        <nav className={`navbar navbar-expand-lg sticky-navbar ${show ? 'is-sticky' : ''}  `}>
+      <header className={`header ${showScroll ? '' : 'header-transparent'}  header-full`}>
+        <nav className={`navbar navbar-expand-lg sticky-navbar ${showScroll ? 'is-sticky' : ''} ${window.innerWidth <= 991 ? 'sticky-navbar' : ''}  `}>
           <div className="container">
             <a className="navbar-brand" href="/">
-              <img loading="lazy" src={logoSrc} height="100" className="logo-light" alt="logo" />
+            {window.innerWidth <= 991 ? (
+                <img loading="lazy" src={logoimg} className="logo logo-dark" height="75" alt="logo" />
+              ) : (
+                <img loading="lazy" src={logoSrc} className="logo logo-light" height={showScroll ? '75' : '100'} alt="logo" />
+              )}
             </a>
-            <button className="navbar-toggler"  type="button">
+            <button className="navbar-toggler"  type="button" onClick={()=>setOpen(!open)}>
               <span className="menu-lines"><span></span></span>
             </button>
 
-            <div className="collapse navbar-collapse" id="mainNavigation">
+            <div className={`collapse navbar-collapse ${open ? "menu-opened":" "}`}  >
                         <ul className="navbar-nav ml-auto">
                             <li className="nav__item has-dropdown">
                                 <a href='/' className="dropdown-toggle nav__item-link ">Home</a>
                             </li>
                             <li className="nav__item has-dropdown">
-                                <a href="/" data-toggle="dropdown" className="dropdown-toggle nav__item-link">IT
+                                <a href="/" data-toggle="dropdown" className="dropdown-toggle nav__item-link" onClick={handleAccordionToggle}>IT
                                     Solutions</a>
-                                <ul className="dropdown-menu wide-dropdown-menu">
+                                <ul className={`dropdown-menu wide-dropdown-menu ${Accordion ? 'show' : ''}`}>
                                     <li className="nav__item">
                                         <div className="row mx-0">
                                             <div className="col-sm-6 dropdown-menu-col">
                                                 <a href="web-solution.html"
-                                                    className="nav__item-link dropdown-menu-title">Web
+                                                    className="nav__item-link dropdown-menu-title ">Web
                                                     Solutions</a>
+                                                    
                                                 <ul className="nav flex-column">
 
                                                     <li className="nav__item"><a className="nav__item-link"
@@ -167,7 +180,7 @@ const Navbar = () => {
                                 <a href="contact-us.html" className="dropdown-toggle nav__item-link">Contact</a>
                             </li>
                         </ul>
-                        <button className="close-mobile-menu d-block d-lg-none"><img src="images/icon/time.svg"
+                        <button className="close-mobile-menu d-block d-lg-none " onClick={handleCloseMenu}><img src={time}
                                 alt=""/></button>
                     </div>
 
