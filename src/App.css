@@ -38,7 +38,10 @@
     margin-bottom: 10px;
   } 
 }
-@media (min-width: 320px) and (max-width: 767px){
+@media   (max-width: 767px){
+  .blog-head-section{
+    padding-top: 50px;
+  }
   .blog-head-section{
     min-height: 200px;
   }

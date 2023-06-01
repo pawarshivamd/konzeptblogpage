@@ -12,7 +12,7 @@ const Blog = () => {
     <div className='blog-section'>
     <div className='blog-head-section'>
       <div className='blog-title'>
-          <h1>Our Blog</h1>
+          <h1>Our Blog</h1> 
       </div>
     </div>
       <div className='blog-grid'>

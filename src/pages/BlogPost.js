@@ -1,73 +1,110 @@
-import React from 'react'
+import React, { useState } from 'react'
+// import newImg from '../img/new.jpg'
+import { Link } from 'react-router-dom'
+import BlogPostLeftDate from '../API/BlogPost/BlogPostLeftDate'
+import BlogRightTop from '../API/BlogPost/BlogRightTop';
+
 
 const BlogPost = () => {
+  const [BlogPostLeftapi] = useState(BlogPostLeftDate);
+  const [BrightTop] = useState(BlogRightTop);
   return (
-    <section className="blog blog-single pt-0 pb-80 mt-20">
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12 col-md-12 col-lg-8">
-            <div className="post-item mb-0">
-              <div className="post__img">
-                <a href="/">
-                  <img    loading="lazy" src={require('../img/new.jpg')} alt="blog image" / >
-                </a>
-              </div>
-              <div className="post__meta d-flex align-items-center mb-20">
-                <span className="post__meta-date">Dec 31, 2021</span>
-                <div className="post__meta-cat">
-                  <a href="/">newYear, Welcome, 2022</a>
-                </div>
-              
-              </div>
-              <h1 className="post__title mb-30">
-              Welcome To 2022 Year
-              </h1>
-              <div className="post__desc">
-                <p>The New Year is fast approaching and celebrations are flowing in everywhere every minute. At the end of 2021, people are gearing up to make new promises and new beginnings for 2022. It’s time to make New Year’s resolutions that will help people achieve their goals</p>
-                
-              </div>
+    <>
+      <section class="page-title page-title-layout15 text-center">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <nav>
+                <ol class="breadcrumb justify-content-center mb-0">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Five Ways to Develop a World Sales Operations
+                    Function</li>
+                </ol>
+              </nav>
             </div>
-     
-          </div>
-
-          <div className="col-sm-12 col-md-12 col-lg-4">
-            <aside className="sidebar">
-
-              <div className="widget widget-posts">
-                <h5 className="widget__title">Recent Posts</h5>
-                <div className="widget__content">
-                  
-                  <div className="widget-post-item d-flex align-items-center">
-                    <div className="widget-post__img">
-                      <a href="/"><img    loading="lazy" src={require('../img/new.jpg')} alt="thumb"/></a>
-                    </div>
-                    <div className="widget-post__content">
-                      <span className="widget-post__date">Dec 31, 2021</span>
-                      <h4 className="widget-post__title">Welcome To 2022 Year
-                      </h4>
-                    </div>
-                  </div>
-                  
-                
-                </div>
-              </div>
-            
-              <div className="widget widget-tags">
-                <div className="widget-content">
-                <h5 className="widget__title">Tags</h5>
-                  <ul className="list-unstyled mb-0">
-                    <li><a href="/">NewYear</a></li>
-                    <li><a href="/">Welcome</a></li>
-                    <li><a href="/">2022</a></li>
-  
-                  </ul>
-                </div>
-              </div>
-            </aside>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className="blog blog-single pt-0 pb-80 mt-20">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-8">
+              {BlogPostLeftapi.map((curEle, id) => {
+                const { img, date, dateinfo, title, info } = curEle;
+                return (
+                  <div className="post-item mb-0">
+                    <div className="post__img">
+                      <Link to="/">
+
+                        <img src={img} alt="blog image" />
+                      </Link>
+                    </div>
+                    <div className="post__meta d-flex align-items-center mb-20">
+                      <span className="post__meta-date">{date}</span>
+                      <div className="post__meta-cat">
+                        <a href="/">{dateinfo}</a>
+                      </div>
+
+                    </div>
+                    <h1 className="post__title mb-30">
+                      {title}
+                    </h1>
+                    <div className="post__desc">
+                      <p>{info}</p>
+
+                    </div>
+                  </div>
+                )
+              })}
+
+
+
+            </div>
+
+            <div className="col-sm-12 col-md-7 col-lg-4">
+              <aside className="sidebar">
+
+                <div className="widget widget-posts">
+                  <h5 className="widget__title">Recent Posts</h5>
+                  {BrightTop.map((curEle, i) => {
+                    const { img, Date, Dateinfo } = curEle;
+                    return (
+                      <div className="widget__content">
+
+                        <div className="widget-post-item d-flex align-items-center">
+                          <div className="widget-post__img">
+                            <a href="/"><img loading="lazy" src={img} alt="thumb" /></a>
+                          </div>
+                          <div className="widget-post__content">
+                            <span className="widget-post__date">{Date}</span>
+                            <h4 className="widget-post__title">{Dateinfo}</h4>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+
+
+                </div>
+
+                <div className="widget widget-tags">
+                  <div className="widget-content">
+                    <h5 className="widget__title">Tags</h5>
+                    <ul className="list-unstyled mb-0">
+                      <li><a href="/">NewYear</a></li>
+                      <li><a href="/">Welcome</a></li>
+                      <li><a href="/">2022</a></li>
+
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
 

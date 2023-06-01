@@ -81,6 +81,8 @@ const Footer = () => {
                                         <a href="tel:+919925033209" className="phone-number">
                                         <FontAwesomeIcon icon={faPhone} /> <span>+91 99250 33209</span>
                                         </a>
+                                        <a href="mailto:contact@konzeptsolutions.com"class="phone-number">
+                                        <FontAwesomeIcon icon={faEnvelope} /><span>contact@konzeptsolutions.com</span></a>
                                         {/* <a href="mailto:contact@konzeptsolutions.com"className="phone-number">
                                         <FontAwesomeIcon icon={faEnvelope} /><span>contact@konzeptsolutions.com</span></a> */}
                                     </li>
