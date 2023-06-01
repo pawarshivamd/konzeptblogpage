@@ -7,6 +7,8 @@ import instagram from '../img/icon/instagram.svg'
 import twiitter from '../img/icon/twiitter.svg'
 import logoimgwhite from '../img/logo/tranferent_konzept_white.svg'
 import logoimg from '../img/logo/tranferent_konzept.svg'
+import { Link } from 'react-router-dom';
+import Blog from './Blog';
 
 
 
@@ -39,9 +41,9 @@ const Footer = () => {
                                 <div className="footer-widget__content">
                                     <nav>
                                         <ul className="list-unstyled">
-                                            <li><a href="about-us.html">About Us</a></li>
-                                            <li><a href="blog">News & Blogs</a></li>
-                                            <li><a href="contact-us.html">Contact</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/about-us">About Us</a></li>
+                                            <li><Link to="/Blog.js"> News & Blogs</Link></li>
+                                            <li><a href="https://www.konzeptsolutions.com/contact-us">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -51,11 +53,11 @@ const Footer = () => {
                                 <div className="footer-widget__content">
                                     <nav>
                                         <ul className="list-unstyled">
-                                            <li><a href="web-solution.html">Web Solutions</a></li>
-                                            <li><a href="mobile-solution.html">Mobile Solutions</a></li>
-                                            <li><a href="digital-marketing.html">Digital Marketing</a></li>
-                                            <li><a href="design-solutions.html#uiux">UI / UX</a></li>
-                                            <li><a href="software-solution.html">Software Solutions</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/web-solution">Web Solutions</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/mobile-solution">Mobile Solutions</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/digital-marketing">Digital Marketing</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/design-solutions#uiux">UI / UX</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/software-solution">Software Solutions</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -65,10 +67,10 @@ const Footer = () => {
                                 <div className="footer-widget__content">
                                     <nav>
                                         <ul className="list-unstyled">
-                                            <li><a href="career">Careers</a></li>
-                                            <li><a href="why-us.html">Why Choose Us</a></li>
-                                            <li><a href="help-and-faq.html">Help & FAQ</a></li>
-                                            <li><a href="sitemap.html">Sitemap</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/career/">Careers</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/why-us">Why Choose Us</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/help-and-faq">Help & FAQ</a></li>
+                                            <li><a href="https://www.konzeptsolutions.com/sitemap">Sitemap</a></li>
                                         </ul>
                                     </nav>
                                 </div>
